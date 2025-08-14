@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmsns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>メニュー</title>
+  </head>
+  <body>
+		<h2>メニュー画面</h2>
+		<hr/>
+		<a th:href="@{/todos}">ToDo一覧へ</a>
+		<div sec:authentication="name">
+			ログイン情報のnameに置き換わる
+		</div>
+		<div sec:authorize="isAuthenticated()">
+			認証された場合のみ
+		</div>
+		<br/>
+		<form th:action="@{/logout}" method="post">
+			<input type="submit" value="ログアウト">
+		</form>
+  </body>
+</html>

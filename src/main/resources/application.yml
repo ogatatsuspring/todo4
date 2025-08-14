@@ -1,0 +1,21 @@
+spring:
+  
+  application:
+    name: todo4
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/springdb
+    username: springuser
+    password: pass
+
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    com:
+      example:
+        todo:
+          repository: DEBUG
